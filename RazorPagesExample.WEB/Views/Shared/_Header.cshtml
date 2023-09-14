@@ -1,4 +1,8 @@
-﻿<header class="page-header">
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using RazorPagesExample.Localization
+@inject IHtmlLocalizer<SharedResources> Localizer
+
+<header class="page-header">
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -10,22 +14,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="@Url.Action("Index", "Home")">Home</a>
+                        <a class="nav-link active" aria-current="page" href="@Url.Action("Index", "Home")">@Localizer["Home"]</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Index", "User")">Users</a>
+                        <a class="nav-link" href="@Url.Action("Index", "User")">@Localizer["Users"]</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Index", "Pet")">Pets</a>
+                        <a class="nav-link" href="@Url.Action("Index", "Pet")">@Localizer["Pets"]</a>
                     </li>
                 </ul>
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle  text-light text-decoration-non" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Profile
+                        @Localizer["Profile"]
                     </a>
                     <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="@Url.Action("UserProfile", "Account")">Edit profile</a></li>
-                        <li><a class="dropdown-item" href="@Url.Action("Logout", "Account")">Logout</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("UserProfile", "Account")">@Localizer["EditProfile"]</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("Logout", "Account")">@Localizer["Logout"]</a></li>
                     </ul>
                 </div>
             </div>

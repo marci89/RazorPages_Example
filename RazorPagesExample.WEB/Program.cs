@@ -1,8 +1,12 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesExample.Business;
 using RazorPagesExample.Business.Services;
+using RazorPagesExample.Localization;
 using RazorPagesExample.Persistence;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +40,38 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 #endregion
 
+#region localization
+
+//Localization
+builder.Services.AddLocalization(o => { o.ResourcesPath = "Resources"; });
+builder.Services.AddMvc()
+
+            .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+            .AddDataAnnotationsLocalization(options =>
+            {
+                options.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(SharedResources));
+            });
+
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    CultureInfo[] supportedCultures = new[]
+    {
+                    new CultureInfo("en-GB"),
+                    new CultureInfo("hu-HU")
+                };
+    // Default language
+    options.DefaultRequestCulture = new RequestCulture("hu");
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+    options.RequestCultureProviders = new List<IRequestCultureProvider>
+        {
+            new QueryStringRequestCultureProvider(),
+            new CookieRequestCultureProvider()
+        };
+});
+
+#endregion
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -58,6 +94,9 @@ if (db.Database.GetPendingMigrations().Any())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+// localization
+app.UseRequestLocalization();
 
 app.UseRouting();
 
