@@ -13,6 +13,20 @@ namespace RazorPagesExample.Persistence
 		public DataContext(DbContextOptions options) : base(options) { }
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
+			//seed user
+			modelBuilder.Entity<User>().HasData(
+		  new User
+		  {
+			  Id = 1,
+			  Name = "user",
+			  Email = "user@example.com",
+			  Password = "user",
+			  DateOfBirth = new DateTime(1989, 9, 29),
+			  Created = DateTime.Now
+		  }
+		);
+
+
 
 		}
 	}
