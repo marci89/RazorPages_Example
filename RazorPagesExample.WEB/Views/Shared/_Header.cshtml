@@ -32,6 +32,10 @@
                         <li><a class="dropdown-item" href="@Url.Action("Logout", "Account")">@Localizer["Logout"]</a></li>
                     </ul>
                 </div>
+                <div>
+                   @* Select language*@
+                    @await Html.PartialAsync("_SelectLanguagePartial")
+                </div>
             </div>
         </div>
     </nav>

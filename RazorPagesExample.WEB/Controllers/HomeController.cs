@@ -1,33 +1,36 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
-using RazorPagesExample.WEB.Models;
-using System.Diagnostics;
 
 namespace RazorPagesExample.WEB.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
-
-        public HomeController()
-        {
-        }
-
+        /// <summary>
+        /// Return index view
+        /// </summary>
+        /// <returns></returns>
         [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        /// <summary>
+        /// Switch languages
+        /// </summary>
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult SetLanguage(string culture, string returnUrl)
         {
-            return View();
-        }
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return LocalRedirect(returnUrl);
         }
     }
 }
