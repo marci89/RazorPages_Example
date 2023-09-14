@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using RazorPagesExample.Localization
+@inject IHtmlLocalizer<SharedResources> Localizer
+
+@model List<UserViewModel>
+
+@{
+    ViewData["Title"] = @Localizer["Users"];
+}
+
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-12 mx-auto">
+            @if (Model.Any())
+            {
+                <table class="table table-striped" style="width:60%; margin: 0 auto;">
+                    <thead>
+                        <tr>
+                            <th scope="col">@Localizer["Username"]</th>
+                            <th scope="col">@Localizer["Email"]</th>
+                            <th scope="col">@Localizer["age"]</th>
+                            <th scope="col">@Localizer["Birthday"]</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>@user.Name</td>
+                                <td>@user.Email</td>
+                                <td>@user.Age</td>
+                                <td>@user.DateOfBirth.ToString("d")</td>
+                                <td></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <h3>@Localizer["NoUsers"]</h3>
+            }
+
+        </div>
+    </div>
+</div>

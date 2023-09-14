@@ -4,13 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RazorPagesExample.WEB.Controllers
 {
-    [Authorize]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         /// <summary>
         /// Return index view
         /// </summary>
-        /// <returns></returns>
         [AllowAnonymous]
         public IActionResult Index()
         {
@@ -20,7 +18,6 @@ namespace RazorPagesExample.WEB.Controllers
         /// <summary>
         /// Switch languages
         /// </summary>
-        [AllowAnonymous]
         [HttpPost]
         public IActionResult SetLanguage(string culture, string returnUrl)
         {

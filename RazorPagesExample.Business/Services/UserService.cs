@@ -31,9 +31,10 @@ namespace RazorPagesExample.Business.Services
         /// <summary>
         /// List user
         /// </summary>
-        public async Task<List<User>> ListUser()
+        public async Task<List<UserViewModel>> ListUser(long id)
         {
-            return await _dbContext.Users.ToListAsync();
+            var users = await _dbContext.Users.Where(u => u.Id != id).ToListAsync();
+            return users.Select(u => _factory.Create(u)).ToList();
         }
 
         /// <summary>

@@ -8,8 +8,7 @@ using System.Security.Claims;
 
 namespace RazorPagesExample.WEB.Controllers
 {
-    [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly UserService _service;
 
@@ -51,7 +50,7 @@ namespace RazorPagesExample.WEB.Controllers
 
                 await HttpContext.SignInAsync(new ClaimsPrincipal(new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme)));
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToHome();
             }
             ModelState.AddModelError("Password", " Login failed.");
 
@@ -67,7 +66,7 @@ namespace RazorPagesExample.WEB.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToHome();
         }
     }
 }

@@ -1,0 +1,7 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using RazorPagesExample.Localization
+@inject IHtmlLocalizer<SharedResources> Localizer
+
+@{
+    ViewData["Title"] = @Localizer["Pets"];
+}
