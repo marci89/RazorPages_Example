@@ -21,5 +21,14 @@ namespace RazorPagesExample.WEB.Controllers
             var users = await _service.ListUser(id);
             return View(users);
         }
+
+        /// <summary>
+        /// Delete user. The sweetalert isConfirmed part call this from user.js
+        /// </summary>
+        public async Task<IActionResult> Delete(long id)
+        {
+            var result = await _service.Delete(id);
+            return new JsonResult(new { success = result });
+        }
     }
 }

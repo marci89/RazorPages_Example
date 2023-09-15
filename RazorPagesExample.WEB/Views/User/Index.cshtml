@@ -8,6 +8,15 @@
     ViewData["Title"] = @Localizer["Users"];
 }
 
+<script src="~/js/user.js" asp-append-version="true"></script>
+
+@*these input values will contain the sweet alert translate texts*@
+<input type="hidden" id="deleteConfirmationTitle" data-localized-text="@Localizer["DeleteConfirmationTitle"]">
+<input type="hidden" id="deleteConfirmationText" data-localized-text="@Localizer["DeleteItemConfirmationText"]">
+<input type="hidden" id="deleteConfirmationSuccessMessage" data-localized-text="@Localizer["DeleteSuccessMessage"]">
+<input type="hidden" id="deleteConfirmationErrorMessage" data-localized-text="@Localizer["DeleteErrorMessage"]">
+<input type="hidden" id="confirmButtonText" data-localized-text="@Localizer["ConfirmButtonText"]">
+<input type="hidden" id="cancelButtonText" data-localized-text="@Localizer["CancelButtonText"]">
 
 <div class="container text-center">
     <div class="row">
@@ -32,7 +41,7 @@
                                 <td>@user.Email</td>
                                 <td>@user.Age</td>
                                 <td>@user.DateOfBirth.ToString("d")</td>
-                                <td></td>
+                                <td><a href="#" class="btn btn-danger delete-user-btn" data-id="@user.Id">Delete</a></td>
                             </tr>
                         }
                     </tbody>
@@ -46,3 +55,4 @@
         </div>
     </div>
 </div>
+

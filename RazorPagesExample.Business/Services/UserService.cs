@@ -68,14 +68,17 @@ namespace RazorPagesExample.Business.Services
         /// <summary>
         /// Delete user
         /// </summary>
-        public async Task Delete(long userId)
+        public async Task<bool> Delete(long userId)
         {
             var user = await _dbContext.Users.FindAsync(userId);
             if (user != null)
             {
                 _dbContext.Users.Remove(user);
                 await _dbContext.SaveChangesAsync();
+                return true;
             }
+
+            return false;
         }
     }
 }

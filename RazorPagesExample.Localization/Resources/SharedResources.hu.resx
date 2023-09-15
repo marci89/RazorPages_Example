@@ -123,8 +123,26 @@
   <data name="Birthday" xml:space="preserve">
     <value>Születésnap</value>
   </data>
+  <data name="CancelButtonText" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="ConfirmButtonText" xml:space="preserve">
+    <value>Igen, törlöm</value>
+  </data>
   <data name="Created" xml:space="preserve">
     <value>Létrehozva</value>
+  </data>
+  <data name="DeleteConfirmationTitle" xml:space="preserve">
+    <value>Elem törlése</value>
+  </data>
+  <data name="DeleteErrorMessage" xml:space="preserve">
+    <value>Sikertelen törlés</value>
+  </data>
+  <data name="DeleteItemConfirmationText" xml:space="preserve">
+    <value>Biztosan törli ezt az elemet?</value>
+  </data>
+  <data name="DeleteSuccessMessage" xml:space="preserve">
+    <value>Sikeres törlés</value>
   </data>
   <data name="EditProfile" xml:space="preserve">
     <value>Profil szerkesztése</value>
