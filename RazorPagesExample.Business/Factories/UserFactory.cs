@@ -21,5 +21,19 @@ namespace RazorPagesExample.Business
                 Created = DateTime.Now
             };
         }
+        public virtual User Create(RegistrationViewModel user)
+        {
+            if (user is null) return null;
+
+            return new User
+            {
+                Name = user.Username,
+                Email = user.Email,
+                DateOfBirth = user.DateOfBirth,
+                Password = user.Password,
+                Created = DateTime.Now
+            };
+        }
+
     }
 }

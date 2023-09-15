@@ -3,8 +3,6 @@
 @inject IHtmlLocalizer<SharedResources> Localizer
 
 <header class="page-header">
-
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a href="@Url.Action("Index", "Home")" class="navbar-brand"></a>
@@ -23,12 +21,13 @@
                         <a class="nav-link" href="@Url.Action("Index", "Pet")">@Localizer["Pets"]</a>
                     </li>
                 </ul>
+                 @*Profile dropdown*@
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle  text-light text-decoration-non" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         @Localizer["Profile"]
                     </a>
                     <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="@Url.Action("UserProfile", "Account")">@Localizer["EditProfile"]</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("EditProfile", "Account")">@Localizer["EditProfile"]</a></li>
                         <li><a class="dropdown-item" href="@Url.Action("Logout", "Account")">@Localizer["Logout"]</a></li>
                     </ul>
                 </div>

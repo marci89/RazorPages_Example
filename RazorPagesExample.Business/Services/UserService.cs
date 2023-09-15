@@ -33,6 +33,7 @@ namespace RazorPagesExample.Business.Services
         /// </summary>
         public async Task<List<UserViewModel>> ListUser(long id)
         {
+            //filtering the login user
             var users = await _dbContext.Users.Where(u => u.Id != id).ToListAsync();
             return users.Select(u => _factory.Create(u)).ToList();
         }
@@ -48,21 +49,45 @@ namespace RazorPagesExample.Business.Services
         /// <summary>
         /// Create user
         /// </summary>
-        public async Task<User> Create(User user)
+        public async Task<bool> Create(RegistrationViewModel request)
         {
-            _dbContext.Users.Add(user);
-            await _dbContext.SaveChangesAsync();
-            return user;
+            try
+            {
+                var user = _factory.Create(request);
+                _dbContext.Users.Add(user);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         /// <summary>
         /// Update user
         /// </summary>
-        public async Task<User> Update(User user)
+        public async Task<bool> Update(UserUpdateViewModel request)
         {
-            _dbContext.Entry(user).State = EntityState.Modified;
-            await _dbContext.SaveChangesAsync();
-            return user;
+            try
+            {
+                var user = await ReadUserById(request.Id);
+
+                _dbContext.Entry(user).State = EntityState.Modified;
+
+                user.Name = request.Username;
+                user.Email = request.Email;
+                user.DateOfBirth = request.DateOfBirth;
+
+                await _dbContext.SaveChangesAsync();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
         /// <summary>

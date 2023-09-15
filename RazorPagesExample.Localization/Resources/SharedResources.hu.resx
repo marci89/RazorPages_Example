@@ -123,14 +123,29 @@
   <data name="Birthday" xml:space="preserve">
     <value>Születésnap</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
   <data name="CancelButtonText" xml:space="preserve">
     <value>Mégse</value>
   </data>
   <data name="ConfirmButtonText" xml:space="preserve">
     <value>Igen, törlöm</value>
   </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Megerősítő jelszó</value>
+  </data>
+  <data name="ConfirmPasswordRequired" xml:space="preserve">
+    <value>Megerősítő jelszó megadása kötelező</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Létrehozás</value>
+  </data>
   <data name="Created" xml:space="preserve">
     <value>Létrehozva</value>
+  </data>
+  <data name="DateOfBirthRequired" xml:space="preserve">
+    <value>Születésnap megadása kötelező</value>
   </data>
   <data name="DeleteConfirmationTitle" xml:space="preserve">
     <value>Elem törlése</value>
@@ -144,11 +159,17 @@
   <data name="DeleteSuccessMessage" xml:space="preserve">
     <value>Sikeres törlés</value>
   </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Szerkesztés</value>
+  </data>
   <data name="EditProfile" xml:space="preserve">
     <value>Profil szerkesztése</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Email megadása kötelező</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Kezdőoldal</value>
@@ -156,8 +177,14 @@
   <data name="HomePageText" xml:space="preserve">
     <value>Ez egy .net 6-os Razorpages mvc példa weboldal. Köszönöm a látogatást.</value>
   </data>
+  <data name="InvalidEmailFormat" xml:space="preserve">
+    <value>Kérlek, adj meg egy érvényes email címet</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Bejelentkezés</value>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Sikertelen bejeletkezés</value>
   </data>
   <data name="Logout" xml:space="preserve">
     <value>Kijelentkezés</value>
@@ -167,6 +194,9 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>Jelszó</value>
+  </data>
+  <data name="PasswordNotMatch" xml:space="preserve">
+    <value>A jelszavak nem egyeznek.</value>
   </data>
   <data name="PasswordRequired" xml:space="preserve">
     <value>Jelszó megadása kötelező</value>

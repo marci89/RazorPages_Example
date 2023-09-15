@@ -17,3 +17,8 @@ body {
     margin-bottom: 60px;
     background-color: aliceblue;
 }
+
+.card-body {
+    background-color: slategray;
+    color: wheat;
+}
