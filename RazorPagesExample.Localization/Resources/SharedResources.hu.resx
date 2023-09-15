@@ -162,8 +162,14 @@
   <data name="Edit" xml:space="preserve">
     <value>Szerkesztés</value>
   </data>
+  <data name="EditFailed" xml:space="preserve">
+    <value>sikertelen szerkesztés</value>
+  </data>
   <data name="EditProfile" xml:space="preserve">
     <value>Profil szerkesztése</value>
+  </data>
+  <data name="EditSuccess" xml:space="preserve">
+    <value>Sikeres szerkesztés</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
@@ -209,6 +215,12 @@
   </data>
   <data name="Registration" xml:space="preserve">
     <value>Regisztráció</value>
+  </data>
+  <data name="SaveFailed" xml:space="preserve">
+    <value>Sikertelen mentés</value>
+  </data>
+  <data name="SaveSuccess" xml:space="preserve">
+    <value>Sikeres mentés</value>
   </data>
   <data name="Username" xml:space="preserve">
     <value>Felhasználónév</value>

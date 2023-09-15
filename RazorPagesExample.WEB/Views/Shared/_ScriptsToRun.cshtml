@@ -1,0 +1,30 @@
+﻿@using System.Web;
+
+@{
+    var scriptToRun = string.Empty;
+
+    if (!string.IsNullOrWhiteSpace(Convert.ToString(TempData[ViewDataKeys.RunScript])))
+    {
+        scriptToRun += Convert.ToString(TempData[ViewDataKeys.RunScript]) + ";";
+    }
+
+    if (!string.IsNullOrWhiteSpace(Convert.ToString(TempData[ViewDataKeys.ErrorMessage])))
+    {
+        scriptToRun += "ShowError('" + HttpUtility.JavaScriptStringEncode(Convert.ToString(TempData[ViewDataKeys.ErrorMessage])) + "','" + HttpUtility.JavaScriptStringEncode(Convert.ToString(TempData[ViewDataKeys.ErrorMessageText])) + "');";
+    }
+
+    if (!string.IsNullOrWhiteSpace(Convert.ToString(TempData[ViewDataKeys.SuccessMessage])))
+    {
+        scriptToRun += "ShowSuccess('" + HttpUtility.JavaScriptStringEncode(Convert.ToString(TempData[ViewDataKeys.SuccessMessage])) + "');";
+    }
+}
+
+@if (!string.IsNullOrWhiteSpace(scriptToRun))
+{
+    <!-- Execute JavaScript functions based on TempData values -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+        @Html.Raw(scriptToRun)
+                });
+    </script>
+}

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using RazorPagesExample.Business.Models;
 using RazorPagesExample.Business.Services;
+using RazorPagesExample.Localization;
 using System.Security.Claims;
 
 namespace RazorPagesExample.WEB.Controllers
@@ -12,9 +13,9 @@ namespace RazorPagesExample.WEB.Controllers
     public class AccountController : BaseController
     {
         private readonly UserService _service;
-        private readonly IStringLocalizer<AccountController> _localizer;
+        private readonly IStringLocalizer<SharedResources> _localizer;
 
-        public AccountController(UserService service, IStringLocalizer<AccountController> localizer)
+        public AccountController(UserService service, IStringLocalizer<SharedResources> localizer)
         {
             _service = service;
             _localizer = localizer;
@@ -82,8 +83,10 @@ namespace RazorPagesExample.WEB.Controllers
                 return View("Registration", model);
 
             var success = await _service.Create(model);
+            if (success)
+                return RedirectWithSuccess("Index", "Home", null, _localizer["SaveSuccess"]);
 
-            return RedirectToHome();
+            return ReloadWithError("Registration", model, _localizer["SaveFailed"]);
 
         }
 
@@ -122,7 +125,10 @@ namespace RazorPagesExample.WEB.Controllers
 
             var success = await _service.Update(model);
 
-            return RedirectToHome();
+            if (success)
+                return RedirectWithSuccess("Index", "Home", null, _localizer["EditSuccess"]);
+
+            return ReloadWithError("EditProfile", model, _localizer["EditFailed"]);
 
         }
 

@@ -46,5 +46,27 @@
             </div>
         </div>
     </div>
+    <partial name="_ScriptsToRun" />
 </body>
 </html>
+
+<script>
+    function ShowError(errorMessage, errorText) {
+        Swal.fire({
+            title: errorMessage,
+            text: errorText,
+            showConfirmButton: false,
+            timer: 2500,
+            icon: 'error',
+        });
+    }
+
+    function ShowSuccess(successMessage) {
+        Swal.fire({
+            text: successMessage,
+            showConfirmButton: false,
+            timer: 2500,
+            icon: 'success',
+        });
+    }
+</script>
