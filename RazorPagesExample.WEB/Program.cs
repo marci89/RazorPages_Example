@@ -16,6 +16,8 @@ builder.Services.AddControllersWithViews();
 //DI
 builder.Services.AddScoped<UserFactory>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<PetFactory>();
+builder.Services.AddScoped<PetService>();
 
 #region dbContext
 

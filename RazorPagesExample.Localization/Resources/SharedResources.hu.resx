@@ -120,6 +120,9 @@
   <data name="Age" xml:space="preserve">
     <value>Kor</value>
   </data>
+  <data name="AgeRequired" xml:space="preserve">
+    <value>Kor megadása kötelező</value>
+  </data>
   <data name="Birthday" xml:space="preserve">
     <value>Születésnap</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="CancelButtonText" xml:space="preserve">
     <value>Mégse</value>
+  </data>
+  <data name="Cat" xml:space="preserve">
+    <value>Macska</value>
   </data>
   <data name="ConfirmButtonText" xml:space="preserve">
     <value>Igen, törlöm</value>
@@ -158,6 +164,9 @@
   </data>
   <data name="DeleteSuccessMessage" xml:space="preserve">
     <value>Sikeres törlés</value>
+  </data>
+  <data name="Dog" xml:space="preserve">
+    <value>Kutya</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Szerkesztés</value>
@@ -195,6 +204,12 @@
   <data name="Logout" xml:space="preserve">
     <value>Kijelentkezés</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Név</value>
+  </data>
+  <data name="NameRequired" xml:space="preserve">
+    <value>Név megadása kötelező</value>
+  </data>
   <data name="NoUsers" xml:space="preserve">
     <value>rajtad kívül nincsen másik felhasználó</value>
   </data>
@@ -221,6 +236,12 @@
   </data>
   <data name="SaveSuccess" xml:space="preserve">
     <value>Sikeres mentés</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Típus</value>
+  </data>
+  <data name="TypeRequired" xml:space="preserve">
+    <value>Típus megadása kötelező</value>
   </data>
   <data name="Username" xml:space="preserve">
     <value>Felhasználónév</value>

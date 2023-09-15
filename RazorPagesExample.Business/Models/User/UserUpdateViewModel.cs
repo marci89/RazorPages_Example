@@ -2,6 +2,9 @@
 
 namespace RazorPagesExample.Business.Models
 {
+    /// <summary>
+    /// Model for update user view and action
+    /// </summary>
     public class UserUpdateViewModel
     {
         public long Id { get; set; }

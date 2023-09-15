@@ -73,7 +73,7 @@ namespace RazorPagesExample.WEB.Controllers
         }
 
         /// <summary>
-        /// Update user
+        /// Create user
         /// </summary>
         [HttpPost]
         [AllowAnonymous]

@@ -2,6 +2,9 @@
 
 namespace RazorPagesExample.Business.Models
 {
+    /// <summary>
+    /// Model for registration view and action
+    /// </summary>
     public class RegistrationViewModel
     {
         [Required(ErrorMessage = "UsernameRequired")]
