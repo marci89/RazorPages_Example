@@ -36,7 +36,8 @@ namespace RazorPagesExample.WEB.Controllers
         [HttpGet]
         public IActionResult CreatePet()
         {
-            return View(new PetCreateViewModel());
+            //Return partial view because it will be a modal content.
+            return PartialView(new PetCreateViewModel());
         }
 
         /// <summary>

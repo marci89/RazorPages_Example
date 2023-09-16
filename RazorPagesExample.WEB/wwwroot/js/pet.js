@@ -1,13 +1,23 @@
 ﻿
 
+//Create pet
+function createPet() {
+    // Call the action which return a partial view for modal.
+    jQuery.ajax({
+        url: "/Pet/CreatePet",
+        dataType: "HTML",
+        method: "GET",
+        success: function (view) {
+            debugger;
+            ShowModal(view);
+        }
+    })
+};
 
- function createPet() {
+function editPet(id) {
 
 };
 
- function editPet(id) {
-
-};
 
 
 $(document).ready(function () {
