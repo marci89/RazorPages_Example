@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RazorPagesExample.Persistence.Migrations
 {
-    public partial class InitialCreated : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -51,27 +51,27 @@ namespace RazorPagesExample.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Created", "DateOfBirth", "Email", "Name", "Password" },
-                values: new object[] { 1L, new DateTime(2023, 9, 15, 15, 21, 7, 242, DateTimeKind.Local).AddTicks(9835), new DateTime(1989, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "marci@example.com", "marci", "marci" });
+                values: new object[] { 1L, new DateTime(2023, 9, 16, 13, 19, 46, 369, DateTimeKind.Local).AddTicks(6834), new DateTime(1989, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "marci@example.com", "marci", "marci" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Created", "DateOfBirth", "Email", "Name", "Password" },
-                values: new object[] { 2L, new DateTime(2023, 9, 15, 15, 21, 7, 242, DateTimeKind.Local).AddTicks(9886), new DateTime(1967, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "john@example.com", "John", "john" });
+                values: new object[] { 2L, new DateTime(2023, 9, 16, 13, 19, 46, 369, DateTimeKind.Local).AddTicks(6871), new DateTime(1967, 2, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "john@example.com", "John", "john" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Created", "DateOfBirth", "Email", "Name", "Password" },
-                values: new object[] { 3L, new DateTime(2023, 9, 15, 15, 21, 7, 242, DateTimeKind.Local).AddTicks(9889), new DateTime(1990, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "alice@example.com", "Alice", "alice" });
+                values: new object[] { 3L, new DateTime(2023, 9, 16, 13, 19, 46, 369, DateTimeKind.Local).AddTicks(6874), new DateTime(1990, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "alice@example.com", "Alice", "alice" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Created", "DateOfBirth", "Email", "Name", "Password" },
-                values: new object[] { 4L, new DateTime(2023, 9, 15, 15, 21, 7, 242, DateTimeKind.Local).AddTicks(9891), new DateTime(1985, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "eve@example.com", "Eve", "eve" });
+                values: new object[] { 4L, new DateTime(2023, 9, 16, 13, 19, 46, 369, DateTimeKind.Local).AddTicks(6877), new DateTime(1985, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "eve@example.com", "Eve", "eve" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Created", "DateOfBirth", "Email", "Name", "Password" },
-                values: new object[] { 5L, new DateTime(2023, 9, 15, 15, 21, 7, 242, DateTimeKind.Local).AddTicks(9894), new DateTime(1992, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "grace@example.com", "Grace", "grace" });
+                values: new object[] { 5L, new DateTime(2023, 9, 16, 13, 19, 46, 369, DateTimeKind.Local).AddTicks(6880), new DateTime(1992, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "grace@example.com", "Grace", "grace" });
 
             migrationBuilder.InsertData(
                 table: "Pets",
