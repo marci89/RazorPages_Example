@@ -61,7 +61,7 @@ namespace RazorPagesExample.Business.Services
         {
             try
             {
-                var pet = await ReadPetById(request.UserId);
+                var pet = await ReadPetById(request.Id);
 
                 _dbContext.Entry(pet).State = EntityState.Modified;
 

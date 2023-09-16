@@ -31,7 +31,7 @@ namespace RazorPagesExample.WEB.Controllers
         }
 
         /// <summary>
-        /// Return the create view
+        /// Return the create view for modal
         /// </summary>
         [HttpGet]
         public IActionResult CreatePet()
@@ -61,25 +61,26 @@ namespace RazorPagesExample.WEB.Controllers
         }
 
         /// <summary>
-        /// Return the edit pet view
+        /// Return the edit pet view for modal
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> EditPet()
+        public async Task<IActionResult> EditPet(long id)
         {
             var request = new PetUpdateViewModel();
 
-            var id = GetUserId();
             var pet = await _service.ReadPetById(id);
             if (pet != null)
             {
                 request = new PetUpdateViewModel
                 {
+                    Id = pet.Id,
                     Name = pet.Name,
                     Age = pet.Age
                 };
             }
 
-            return View(request);
+            //Return partial view because it will be a modal content.
+            return PartialView(request);
         }
 
         /// <summary>

@@ -153,6 +153,9 @@
   <data name="DateOfBirthRequired" xml:space="preserve">
     <value>Születésnap megadása kötelező</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
   <data name="DeleteConfirmationTitle" xml:space="preserve">
     <value>Elem törlése</value>
   </data>
@@ -225,8 +228,14 @@
   <data name="PasswordRequired" xml:space="preserve">
     <value>Jelszó megadása kötelező</value>
   </data>
+  <data name="PetCreate" xml:space="preserve">
+    <value>Házi kedvenc létrehozása</value>
+  </data>
   <data name="Pets" xml:space="preserve">
     <value>Házi kedvencek</value>
+  </data>
+  <data name="PetUpdate" xml:space="preserve">
+    <value>Házi kedvenc szerkesztése</value>
   </data>
   <data name="Profile" xml:space="preserve">
     <value>Profil</value>
@@ -239,6 +248,9 @@
   </data>
   <data name="SaveSuccess" xml:space="preserve">
     <value>Sikeres mentés</value>
+  </data>
+  <data name="SelectType" xml:space="preserve">
+    <value>Válassz típust</value>
   </data>
   <data name="Type" xml:space="preserve">
     <value>Típus</value>

@@ -84,7 +84,7 @@ namespace RazorPagesExample.WEB.Controllers
 
             var success = await _service.Create(model);
             if (success)
-                return RedirectWithSuccess("Index", "Home", null, _localizer["SaveSuccess"]);
+                return RedirectWithSuccess("Login", "Account", null, _localizer["SaveSuccess"]);
 
             return ReloadWithError("Registration", model, _localizer["SaveFailed"]);
 

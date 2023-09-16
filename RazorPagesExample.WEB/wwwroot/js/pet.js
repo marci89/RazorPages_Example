@@ -8,14 +8,23 @@ function createPet() {
         dataType: "HTML",
         method: "GET",
         success: function (view) {
-            debugger;
             ShowModal(view);
         }
     })
 };
 
+//Edit pet
 function editPet(id) {
-
+    // Call the action which return a partial view for modal.
+    jQuery.ajax({
+        url: "/Pet/EditPet",
+        data: { id: id },
+        dataType: "HTML",
+        method: "GET",
+        success: function (view) {
+            ShowModal(view);
+        }
+    })
 };
 
 

@@ -25,8 +25,9 @@ function updateModalContent(content) {
 * Modal close
 * */
 function closeModal() {
-    debugger;
     jQuery("#Modal").modal("hide");
 }
+
+
 
 //#endregion Modal

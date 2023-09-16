@@ -42,7 +42,7 @@
                                 <td>@user.Email</td>
                                 <td>@user.Age</td>
                                 <td>@user.DateOfBirth.ToString("d")</td>
-                                <td><a href="#" class="btn btn-danger delete-user-btn" data-id="@user.Id">Delete</a></td>
+                                <td><a href="#" class="btn btn-danger delete-user-btn" data-id="@user.Id">@Localizer["Delete"]</a></td>
                             </tr>
                         }
                     </tbody>

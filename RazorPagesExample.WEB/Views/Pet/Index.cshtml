@@ -2,6 +2,7 @@
 @using RazorPagesExample.Localization
 @inject IHtmlLocalizer<SharedResources> Localizer
 
+
 @model List<PetViewModel>
 
 @{
@@ -39,11 +40,11 @@
                             @* Adding data-id because I can Identify the row if i want to delete it*@
                             <tr data-id="@pet.Id">
                                 <td>@pet.Name</td>
-                                <td>@pet.Type.ToString()</td>
+                                <td>@Localizer[@pet.Type.ToString()]</td>
                                 <td>@pet.Age</td>
                                 <td>
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal" onclick="editPet(@pet.Id)">@Localizer["Edit"]</button>
                                     <a href="#" class="btn btn-danger delete-pet-btn" data-id="@pet.Id">@Localizer["Delete"]</a>
-                                    <button class="btn btn-primary" onclick="editPet(@pet.Id)">@Localizer["Edit"]</button>
                                 </td>
                             </tr>
                         }

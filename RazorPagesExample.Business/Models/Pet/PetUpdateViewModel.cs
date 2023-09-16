@@ -4,7 +4,7 @@ namespace RazorPagesExample.Business.Models
 {
     public class PetUpdateViewModel
     {
-        public long UserId { get; set; }
+        public long Id { get; set; }
 
         [Required(ErrorMessage = "NameRequired")]
         [Display(Name = "Name")]
