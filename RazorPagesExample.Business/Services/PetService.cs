@@ -24,7 +24,7 @@ namespace RazorPagesExample.Business.Services
         /// </summary>
         public async Task<List<PetViewModel>> ListPet(long userId)
         {
-            var pets = await _dbContext.Pets.Where(u => u.UserId != userId).ToListAsync();
+            var pets = await _dbContext.Pets.Where(u => u.UserId == userId).ToListAsync();
             return pets.Select(u => _factory.Create(u)).ToList();
         }
 

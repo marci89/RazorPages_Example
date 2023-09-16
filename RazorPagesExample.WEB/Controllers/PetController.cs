@@ -23,9 +23,11 @@ namespace RazorPagesExample.WEB.Controllers
         /// <summary>
         /// Return Pet index view
         /// </summary>
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var id = GetUserId();
+            var pets = await _service.ListPet(id);
+            return View(pets);
         }
 
         /// <summary>

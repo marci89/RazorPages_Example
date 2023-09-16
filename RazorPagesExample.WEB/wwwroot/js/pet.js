@@ -1,8 +1,19 @@
 ﻿
+
+
+ function createPet() {
+
+};
+
+ function editPet(id) {
+
+};
+
+
 $(document).ready(function () {
 
     // Function to handle delete confirmation by button click
-    $(".delete-user-btn").click(function (e) {
+    $(".delete-pet-btn").click(function (e) {
         e.preventDefault();
         const itemId = $(this).data("id");
 
@@ -23,12 +34,12 @@ $(document).ready(function () {
             cancelButtonColor: "#3085d6",
             cancelButtonText: cancelButtonText,
             confirmButtonText: confirmButtonText,
-            
+
         }).then((result) => {
             if (result.isConfirmed) {
                 // Perform the delete action, e.g., by making an AJAX request
                 $.ajax({
-                    url: "/User/Delete",
+                    url: "/Pet/Delete",
                     method: "POST",
                     data: { id: itemId },
                     success: function () {
@@ -38,10 +49,10 @@ $(document).ready(function () {
                         $(`tr[data-id="${deletedRowId}"]`).remove();
 
                         Swal.fire(deleteConfirmationSuccessMessage, "success");
-          
+
                     },
                     error: function () {
-                        // Handle error, e.g., show an error message
+
                         Swal.fire("Error!", deleteConfirmationErrorMessage, "error");
                     },
                 });

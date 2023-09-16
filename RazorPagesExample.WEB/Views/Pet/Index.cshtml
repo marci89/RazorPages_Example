@@ -2,6 +2,60 @@
 @using RazorPagesExample.Localization
 @inject IHtmlLocalizer<SharedResources> Localizer
 
+@model List<PetViewModel>
+
 @{
     ViewData["Title"] = @Localizer["Pets"];
 }
+
+<script src="~/js/pet.js" asp-append-version="true"></script>
+
+@*these input values will contain the sweet alert translate texts*@
+<input type="hidden" id="deleteConfirmationTitle" data-localized-text="@Localizer["DeleteConfirmationTitle"]">
+<input type="hidden" id="deleteConfirmationText" data-localized-text="@Localizer["DeleteItemConfirmationText"]">
+<input type="hidden" id="deleteConfirmationSuccessMessage" data-localized-text="@Localizer["DeleteSuccessMessage"]">
+<input type="hidden" id="deleteConfirmationErrorMessage" data-localized-text="@Localizer["DeleteErrorMessage"]">
+<input type="hidden" id="confirmButtonText" data-localized-text="@Localizer["ConfirmButtonText"]">
+<input type="hidden" id="cancelButtonText" data-localized-text="@Localizer["CancelButtonText"]">
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-12 mx-auto">
+            <button class="btn btn-success mt-3 mb-3" onclick="createPet()">@Localizer["Create"]</button>
+            @if (Model.Any())
+            {
+                <table class="table table-striped" style="width:60%; margin: 0 auto;">
+                    <thead>
+                        <tr>
+                            <th scope="col">@Localizer["Name"]</th>
+                            <th scope="col">@Localizer["Type"]</th>
+                            <th scope="col">@Localizer["Age"]</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var pet in Model)
+                        {
+                            @* Adding data-id because I can Identify the row if i want to delete it*@
+                            <tr data-id="@pet.Id">
+                                <td>@pet.Name</td>
+                                <td>@pet.Type.ToString()</td>
+                                <td>@pet.Age</td>
+                                <td>
+                                    <a href="#" class="btn btn-danger delete-pet-btn" data-id="@pet.Id">@Localizer["Delete"]</a>
+                                    <button class="btn btn-primary" onclick="editPet(@pet.Id)">@Localizer["Edit"]</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <h3>@Localizer["NoPets"]</h3>
+            }
+
+        </div>
+    </div>
+</div>
+

@@ -28,7 +28,7 @@
                         <tr>
                             <th scope="col">@Localizer["Username"]</th>
                             <th scope="col">@Localizer["Email"]</th>
-                            <th scope="col">@Localizer["age"]</th>
+                            <th scope="col">@Localizer["Age"]</th>
                             <th scope="col">@Localizer["Birthday"]</th>
                             <th scope="col"></th>
                         </tr>
@@ -36,7 +36,8 @@
                     <tbody>
                         @foreach (var user in Model)
                         {
-                            <tr>
+                            @* Adding data-id because I can Identify the row if i want to delete it*@
+                            <tr data-id="@user.Id">
                                 <td>@user.Name</td>
                                 <td>@user.Email</td>
                                 <td>@user.Age</td>
