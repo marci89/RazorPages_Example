@@ -4,6 +4,7 @@ This is a very basic C# MVC project with razor pages. It is just an example.
 
 ## Setup Requirements
 
+
 - You need .NET 6
 - Clone the repository.
 
